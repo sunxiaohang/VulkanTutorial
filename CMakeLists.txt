@@ -20,8 +20,8 @@ aux_source_directory(${PROJECT_SOURCE_DIR}/VulkanInAction/LveWindow DIR_LVEWINDO
 # add_executable(${PROJECT_NAME} ${DIR_FRAMEWORK_SRCS} ${DIR_INACTION_SRCS})
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCE_DIR} ${DIR_INACTION_SRCS} ${DIR_LVEWINDOW_SRCS})
 
-# find_library(Vulkan_LIBRARY NAMES vulkan-1 vulkan PATHS ${CMAKE_SOURCE_DIR}/Library/vulkan-sdk/Lib)
-# find_library(Glfw_LIBRARY NAMES glfw3 vulkan PATHS ${CMAKE_SOURCE_DIR}/Library/glfw-3.3.8/lib)
+find_library(Vulkan_LIBRARY NAMES vulkan-1 vulkan PATHS ${CMAKE_SOURCE_DIR}/Library/vulkan-sdk/Lib)
+find_library(Glfw_LIBRARY NAMES glfw3 vulkan PATHS ${CMAKE_SOURCE_DIR}/Library/glfw-3.3.8/lib)
 
 target_link_libraries(
     ${PROJECT_NAME}
