@@ -1,4 +1,5 @@
 #include "LveWindow.h"
+#include <stdexcept>
 
 LveWindow::LveWindow(int w, int h, std::string name):windowWidth{w}, windowHeight{h}, windowName(name)
 {
@@ -17,6 +18,14 @@ void LveWindow::initWindow()
 bool LveWindow::shouldClose()
 {
     return glfwWindowShouldClose(windowInstance);
+}
+
+void LveWindow::createWindowSurface(VkInstance instance, VkSurfaceKHR* surface)
+{
+    if(glfwCreateWindowSurface(instance, windowInstance, nullptr, surface) != VK_SUCCESS)
+    {
+        throw std::runtime_error("failed to create window surface!");
+    }
 }
 
 LveWindow::~LveWindow()

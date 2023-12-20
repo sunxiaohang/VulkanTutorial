@@ -8,6 +8,7 @@ public:
     ~LveWindow();
     void initWindow();
     bool shouldClose();
+    void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
 private:
     GLFWwindow *windowInstance;
     std::string windowName = "Hello Vulkan!";
